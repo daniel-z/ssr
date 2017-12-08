@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import Routes from '../client/Routes'
-import Provider from 'react-redux';
+import { Provider } from 'react-redux';
 
 export default (req, store) => {
   const content = renderToString(
