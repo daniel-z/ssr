@@ -2,7 +2,6 @@ import 'babel-polyfill';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from './client/components/home';
 import renderer from './helpers/renderer';
 import createStore from "./helpers/createStore";
 import Routes from './client/Routes';
