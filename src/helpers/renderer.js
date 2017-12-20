@@ -18,6 +18,7 @@ export default (req, store) => {
   return `
       <html>
           <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
             <script>
               window.INITIAL_STATE = ${serialize(store.getState())};
             </script>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Header = ({ auth }) => {
-  console.log(auth);
   const authButton = auth ? (
     <a href="/api/logout"> Logout </a>
   ): (
@@ -11,13 +10,14 @@ const Header = ({ auth }) => {
   );
   return (
     <div>
-      <h1>Header</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <div>
-          <Link to="/users">Users</Link>
-          <Link to="/admin">Admins</Link>
-          { authButton }
+        <div className="nav-wrapper">
+          <Link to="/" className="brand-logo">SSR React</Link>
+          <ul className="right">
+            <li><Link to="/users">Users</Link></li>
+            <li><Link to="/admin">Admins</Link></li>
+            <li>{ authButton }</li>
+          </ul>
         </div>
       </nav>
     </div>
