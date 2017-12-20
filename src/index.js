@@ -28,7 +28,11 @@ app.get('*', (req, res) => {
     });
 
     Promise.all(promises).then(() => {
-        res.send(renderer(req, store));
+        const context = {};
+        const content = renderer(req, store, context);
+        const status = context.notFoundPage ? 404 : 200;
+
+        res.status(status).send(content);
     });
 
 });
